@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+// xmpp certificate retriever /
+
+var path = require('path');
+var util = require('util');
+var config = require('jsconfig');
+var info = require('../info');
+
+function colorize(obj) {
+    return util.inspect(obj, {colors:(config.color && config.color !== 'no') || config.debug});
+}
+
+config.cli({
+    domain:['domain', ['d', "xmpp server domain", 'string']],
+    port:  ['port', ['p', "xmpp server port", 'number', 5222]],
+    color: ['color', [false, "colorize output (auto,yes,no)", 'string']],
+    debug: [false, "debug mode", 'bool'],
+});
+
+config.load(path.join(__dirname, '..', 'config.js'), function (args) {
+    config.domain = config.domain || args[0];
+    if (!config.domain) {
+        console.error("no xmpp server domain given!");
+        process.exit(-1);
+    }
+    if (config.debug) console.log('config:', colorize(config));
+
+    info(config.domain, function (err, cert) {
+        if (err) return console.error('Error:', err);
+        if (cert) console.log(colorize(cert));
+        else console.error("no certificate found!");
+    });
+});
