@@ -1,15 +1,19 @@
-{ "name": "xmpp-cert-get",
-  "version": "0.0.0",
-  "description": "",
+{ "name": "xmpp-cert-info",
+  "description": "retrieve ssl certificate for tls from xmpp server",
+  "version": "0.1.0",
   "main": "info.js",
   "bin": {
     "xmpp-cert-info": "./bin/xmpp-cert-info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dodo/xmpp-cert-info.git"
   },
   "dependencies": {
       "node-xmpp-client": "~1.0.0",
       "jsconfig": "~0.2.0"
   },
   "scripts": {},
-  "author": "",
+  "author": "https://github.com/dodo",
   "license": "MIT"
 }
