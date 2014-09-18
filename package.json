@@ -10,7 +10,7 @@
     "url": "git://github.com/dodo/xmpp-cert-info.git"
   },
   "dependencies": {
-      "node-xmpp-client": "~1.0.0",
+      "node-xmpp-client": "1.0.0-alpha7",
       "jsconfig": "~0.2.0"
   },
   "scripts": {},
