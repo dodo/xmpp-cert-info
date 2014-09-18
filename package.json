@@ -1,6 +1,6 @@
 { "name": "xmpp-cert-info",
-  "description": "retrieve ssl certificate for tls from xmpp server",
-  "version": "0.1.0",
+  "description": "retrieve ssl certificate information from xmpp server",
+  "version": "0.1.1",
   "main": "info.js",
   "bin": {
     "xmpp-cert-info": "./bin/xmpp-cert-info"
